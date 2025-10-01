@@ -1,4 +1,7 @@
-export default function AccordionButtons() {
+
+import languages from "../data/languages"
+
+export default function Buttons() {
     return (
         <div className="items">
             <button>HTML</button>
@@ -7,8 +10,7 @@ export default function AccordionButtons() {
             <button>Node.js</button>
             <button>Express</button>
             <button>ReactJs</button>
-        </div>
-
+        </div >
     )
 
 }
