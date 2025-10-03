@@ -1,6 +1,9 @@
+
 import languages from "../data/languages"
 
 export default function Card() {
+
+
     return (
         <div className="Card">
             {languages.map(item => (
