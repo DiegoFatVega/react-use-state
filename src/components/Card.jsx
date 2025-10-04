@@ -1,17 +1,13 @@
 
-import languages from "../data/languages"
-
-export default function Card() {
-
+export default function Card({ title, description }) {
 
     return (
-        <div className="Card">
-            {languages.map(item => (
-                <div className="item" key={item.id}>
-                    <h2>{item.title}</h2>
-                    <h3>{item.description}</h3>
-                </div>
-            ))}
-        </div>
+        < div className="card my-4" >
+            <div className="card-body">
+                <h2>{title}</h2>
+                <h3>{description}</h3>
+            </div>
+        </div >
+
     )
 }
