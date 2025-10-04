@@ -1,3 +1,6 @@
+@import url('bootstrap');
+/* solo import del css da bootrap, non il js */
+
 .buttons {
     display: flex;
     flex-direction: row;

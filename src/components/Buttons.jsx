@@ -1,13 +1,15 @@
 import { useState } from "react";
-import Card from "./Card";
 import languages from "../data/languages"
+import card from "./Card"
 
 export default function Buttons() {
 
-    const [currentDescription, setCurrentDescription] = useState(1);
+    const [currentDescription, setCurrentDescription] = useState(null);
 
-    function handleClick(e) {
-        const currentItemId = Number(e.target.getAttribute(``))
+    console.log(currentDescription)
+
+    function handleClick(index) {
+        setCurrentDescription(index)
     }
 
     return (
@@ -15,26 +17,22 @@ export default function Buttons() {
             <div className="item buttons" >
                 {
 
-                    languages.map(lang => (
-
-                        <button key={lang.id}>{lang.title}</button>
-
+                    languages.map((lang, index) => (
+                        <button key={lang.id} onClick={() => handleClick(index)}>{lang.title}</button>
                     ))
 
                 }
             </div>
             {
-                languages.map(lang => (
-                    <div className="item" key={lang.id}>
-                        <h2>{lang.title}</h2>
-                        <h3>{lang.description}</h3>
-                    </div>
-                ))
+                currentDescription === null ? <p>NESSUN LINGUAGGIO SELEZIONATO</p> :
+                    <div className="item">
+                        <h2>{languages[currentDescription].title}</h2>
+                        <h3>{languages[currentDescription].description}</h3>
+                    </div >
+
             }
 
-        </div >
-
+        </div>
     )
-
 
 }
