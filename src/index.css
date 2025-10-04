@@ -1,8 +1,14 @@
 @import url('bootstrap');
+
 /* solo import del css da bootrap, non il js */
+* {
+    margin: 1px;
+    padding: 1px;
+    box-sizing: border-box;
+}
 
 .buttons {
     display: flex;
     flex-direction: row;
-    gap: 4px;
+    justify-content: flex-start;
 }
